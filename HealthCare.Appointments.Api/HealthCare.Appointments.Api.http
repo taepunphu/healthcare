@@ -1,0 +1,7 @@
+@HealthCare.Appointments.Api_HostAddress = http://localhost:5159
+
+GET {{HealthCare.Appointments.Api_HostAddress}}/todos/
+Accept: application/json
+
+###
+

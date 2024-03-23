@@ -1,0 +1,40 @@
+version: '3.8'
+
+name: 'healthcare-db'
+
+services:
+  appointments-db:
+    image: postgres:16.2
+    container_name: appointments-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: appointments
+    ports:
+      - "5433:5432"
+    volumes: 
+      - ./data/appointments:/var/lib/postgresql/data
+
+  doctors-db:
+    image: postgres:16.2
+    container_name: doctors-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: doctors
+    ports:
+      - "5434:5432"
+    volumes: 
+      - ./data/dcotors:/var/lib/postgresql/data
+
+  documents-db:
+    image: postgres:16.2
+    container_name: documents-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: documents
+    ports:
+      - "5435:5432"
+    volumes: 
+      - ./data/documents:/var/lib/postgresql/data
