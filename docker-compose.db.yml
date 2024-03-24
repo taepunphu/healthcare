@@ -38,3 +38,15 @@ services:
       - "5435:5432"
     volumes: 
       - ./data/documents:/var/lib/postgresql/data
+
+  patients-db:
+    image: postgres:16.2
+    container_name: patients-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: patients
+    ports:
+      - "5436:5432"
+    volumes: 
+      - ./data/patients:/var/lib/postgresql/data

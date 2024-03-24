@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using HealthCare.Appointments.Api.Models;
 
 namespace HealthCare.Appointments.Api.Service
 {
     public interface IPatientsApiRepository
     {
-        
+        Task<List<Patient>> GetPatients();
+        Task<Patient> GetPatient(Guid id);
     }
 }

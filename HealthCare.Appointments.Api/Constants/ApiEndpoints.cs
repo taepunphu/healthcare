@@ -3,21 +3,16 @@ namespace HealthCare.Appointments.Api.Constants
     public class ApiEndpoints
     {
         private readonly IConfiguration _configuration;
-        private const string Doctors = "/doctors";
-        private const string Patients = "/patients";
+
         public ApiEndpoints(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public string GetDoctorsEndpoint()
-        {
-            return _configuration["ApiEndpoints:DoctorsApi"] + Doctors;
-        }
+        private const string Doctors = "/doctors";
+        private const string Patients = "/patients";
 
-        public string GetPatientsEndpoint()
-        {
-            return _configuration["ApiEndpoints:PatientsApi"] + Patients;
-        }
+        public string GetDoctorsEndpoint() => $"{_configuration["ApiEndpoints:PatientsApi"]}{Doctors}";
+        public string GetPatientsEndpoint() => $"{_configuration["ApiEndpoints:PatientsApi"]}{Patients}";
     }
 }
