@@ -1,0 +1,10 @@
+version: '3.8'
+
+name: healthcare-api
+
+services:
+  healthcare.patients.api:
+    image: healthcare-patients-api
+    build:
+      context: .
+      dockerfile: HealthCare.Patients.Api/Dockerfile
